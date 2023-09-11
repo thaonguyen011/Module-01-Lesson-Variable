@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        tr th:nth-child(1),tr td:nth-child(1){
+            width: 50%;
+        }
+    </style>
+  </head>
+  <body>
+    <form
+      method="post"
+      action="http://demo.codegym.vn/6/registration_form/register.php"
+    >
+      <table>
+        <tr>
+          <th>Amount</th>
+          <th>From Currency</th>
+          <th>To Currency</th>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" name="amount" id="amount" />
+          </td>
+          <td>
+            <select>
+              <option value="VietNam">VietNam</option>
+            </select>
+          </td>
+          <td>
+            <select>
+              <option value="USD">USD</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                 <p style="margin: auto">
+        <button type="button" onclick="convert();">Convert</button>
+            </td>
+        </tr>
+      </table>
+      </p>
+      <p id="result" style="text-align: center; color: blue;"></p>
+    </form>
+
+    <script>
+      function convert() {
+        let x1 = document.getElementById("amount").value;
+        let result = Number(x1) * 0.000042;
+        document.getElementById("result").innerHTML =
+          "Result: " + result.toString() + " USD";
+      }
+    </script>
+  </body>
+</html>
