@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+      <h2>Calculator</h2>
+      <input type="number" id="number1" />
+      <input type="number" id="number2" />
+      <br /><br/>
+      <input type="button" onclick="add();" value="Addition"/>
+      <input type="button" onclick="sub();" value="Subtraction"/>
+      <input type="button" onclick="multi();" value="Multiplication"/>
+      <input type="button" onclick="divi();" value=">Divition"/>
+      <p id="result"></p>
+    </form>
+
+    <script>
+      function add() {
+        let number1 = Number(document.getElementById("number1").value);
+        let number2 = Number(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML =
+          "Result Addition: " + (number1 + number2);
+
+      }
+
+      function sub() {
+        let number1 = Number(document.getElementById("number1").value);
+        let number2 = Number(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML =
+          "Result Subtraction: " + (number1 - number2);
+      }
+
+      function multi() {
+        let number1 = Number(document.getElementById("number1").value);
+        let number2 = Number(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML =
+          "Result Multiplication: " + number1 * number2;
+      }
+
+      function divi() {
+        let number1 = Number(document.getElementById("number1").value);
+        let number2 = Number(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML =
+          "Resul Division: " + number1 / number2;
+      }
+    </script>
+</body>
+</html>

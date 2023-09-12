@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="number" id="number1" />
+      <input type="number" id="number2" />
+      <br />
+      <input type="button" onclick="cal(this);" value="+" />
+      <input type="button" onclick="cal(this);" value="-" />
+      <input type="button" onclick="cal(this);" value="*" />
+      <input type="button" onclick="cal(this);" value="/" />
+      <p id="result"></p>
+    </form>
+
+    <script>
+      function add(input) {
+        console.log(input.value);
+      }
+
+      function cal(btn) {
+        let number1 = +document.getElementById("number1").value;
+        let number2 = +document.getElementById("number2").value;
+        let operator = btn.value;
+        let result;
+        switch (operator) {
+          case "+":
+            result = add(number1,number2);
+            break;
+          case "-":
+            result = sub(number1,number2);
+            break;
+          case "*":
+            result = multi(number1,number2);
+            break;
+          case "/":
+            result = division(number1,number2);
+            break;
+        }
+        document.getElementById("result").innerHTML = "Resutl: " + result;
+      }
+
+      function add(a, b) {
+        return a + b;
+      }
+
+      function sub(a, b) {
+        return a - b;
+      }
+
+      function multi(a, b) {
+        return a * b;
+      }
+
+      function division(a, b) {
+        return a / b;
+      }
+
+      // document.getElementById("result").innerHTML = "Result: " + result;
+    </script>
+  </body>
+</html>
